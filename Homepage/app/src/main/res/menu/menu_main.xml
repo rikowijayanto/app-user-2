@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id = "@+id/language"
+        android:title="@string/menu_bahasa"
+        app:showAsAction="never"/>
+
+    <item
+        android:id = "@+id/tentang"
+        android:title="@string/menu_tentang"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_search"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always|collapseActionView"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="@string/menu_cari" />
+
+</menu>

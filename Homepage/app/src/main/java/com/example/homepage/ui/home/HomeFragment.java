@@ -4,21 +4,19 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.homepage.ListUserAdapter;
 import com.example.homepage.R;
 import com.example.homepage.User;
 
 import java.util.ArrayList;
+
+import android.view.Menu;
+import android.view.MenuInflater;
 
 public class HomeFragment extends Fragment {
 
@@ -31,6 +29,8 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+        setHasOptionsMenu(true);
 
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
@@ -47,6 +47,14 @@ public class HomeFragment extends Fragment {
 
         return root;
     }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_main, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
 
     private void showRecyclerList() {
 

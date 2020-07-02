@@ -17,6 +17,9 @@
     <string name="share">Share</string>
     <string name="rekomendasi_untukmu">Rekomendasi Untukmu</string>
     <string name="btn_akun">Akun</string>
+    <string name="menu_bahasa">Bahasa</string>
+    <string name="menu_tentang">Tentang App</string>
+    <string name="menu_cari">Cari</string>
 
 
     <string-array name="data_name">
