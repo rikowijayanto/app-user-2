@@ -31,6 +31,7 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -68,8 +69,6 @@ public class HomeFragment extends Fragment {
             user.setName(dataName[i]);
             user.setDescription(dataDescription[i]);
             user.setPhoto(dataPhoto[i]);
-
-            System.out.println("========================"+dataName[i]);
 
             listUser.add(user);
 
