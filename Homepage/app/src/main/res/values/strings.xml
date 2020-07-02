@@ -20,6 +20,7 @@
     <string name="menu_bahasa">Bahasa</string>
     <string name="menu_tentang">Tentang App</string>
     <string name="menu_cari">Cari</string>
+    <string name="menu_keluar">Keluar</string>
 
 
     <string-array name="data_name">

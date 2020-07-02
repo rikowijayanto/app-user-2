@@ -43,8 +43,6 @@ public class HomeFragment extends Fragment {
         list.addAll(getListUsers());
         showRecyclerList();
 
-
-
         return root;
     }
 
