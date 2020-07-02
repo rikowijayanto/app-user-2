@@ -41,7 +41,7 @@ public class DashboardFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_feeds, container, false);
         
 
-        rvUser = root.findViewById(R.id.rv_user);
+        rvUser = root.findViewById(R.id.rv_grid);
 
         list.addAll(getListUsers());
         showRecyclerGrid();
