@@ -1,6 +1,6 @@
-<resources>
-    <string name="app_name">Homepage</string>
-    <string name="title_home">Halaman Depan</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">GitApp</string>
+    <string name="title_home">Beranda</string>
     <string name="title_dashboard">Feed</string>
     <string name="title_notifications">Notifikasi</string>
     <string name="account_your">Akun Anda</string>
@@ -21,6 +21,9 @@
     <string name="menu_tentang">Tentang App</string>
     <string name="menu_cari">Cari</string>
     <string name="menu_keluar">Keluar</string>
+
+    <string name="tab_text_3">Following</string>
+    <string name="tab_text_4">Follower</string>
 
 
     <string-array name="data_name">
@@ -78,4 +81,14 @@
         <item>https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/TanMalaka_DariPendjara_ed3.jpg/330px-TanMalaka_DariPendjara_ed3.jpg</item>
 
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_following_follower">FollowingFollower</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="pdp_follower">Pengikut</string>
+    <string name="pdp_following">Mengikuti</string>
+    <string name="pdp_repo">Repository</string>
+    <string name="pdp_label">label</string>
+    <string name="title_activity_my_tab_detail">MyTabDetail</string>
 </resources>

@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 
-public class home extends AppCompatActivity {
+public class WelcomeScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class home extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(home.this, MainActivity.class);
+                Intent intent = new Intent(WelcomeScreen.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
