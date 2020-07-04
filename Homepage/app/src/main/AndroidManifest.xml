@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_gitapp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailUserMain"></activity>
+
+        <activity android:name=".DetailUserMain"
+            android:label="@string/manifest_detil" />
         <activity
             android:name=".EmptyResult"
             android:label="@string/result_label" />

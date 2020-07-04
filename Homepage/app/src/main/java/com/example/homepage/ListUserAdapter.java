@@ -14,17 +14,12 @@ import java.util.ArrayList;
 public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ListViewHolder> {
 
     private final String USER_KEY = "username";
-    private final String USER_IMAGE = "image";
     private ArrayList<User> listUser;
 
     public ListUserAdapter (ArrayList <User> listUser) {
         this.listUser = listUser;
 
     }
-
-
-
-
 
     @NonNull
     @Override
@@ -53,7 +48,6 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ListVi
 
                 Intent intent = new Intent(view.getContext(), DetailUserMain.class);
                 intent.putExtra(USER_KEY, user.getName());
-                intent.putExtra(USER_IMAGE, user.getPhoto());
                 view.getContext().startActivity(intent);
 
             }

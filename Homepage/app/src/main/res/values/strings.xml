@@ -27,6 +27,12 @@
     <string name="no_result">Tidak ada hasil</string>
     <string name="result_label">Hasil Penelusuran</string>
     <string name="menu_home">Beranda</string>
+    <string name="detail_text_pengikut">Pengikut</string>
+    <string name="detail_text_mengikuti">Mengikuti</string>
+    <string name="detail_text_blog">Blog</string>
+    <string name="detail_text_company">Perusahaan</string>
+    <string name="detail_text_lokasi">Lokasi</string>
+    <string name="manifest_detil">Detil Pengguna</string>
 
 
     <string-array name="username">
