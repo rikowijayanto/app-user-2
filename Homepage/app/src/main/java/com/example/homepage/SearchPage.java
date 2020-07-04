@@ -24,7 +24,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -35,6 +34,9 @@ public class SearchPage extends AppCompatActivity {
 
     private ArrayList <User> listUser = new ArrayList<>();
     private RecyclerView rvUser;
+    ListUserAdapter listUserAdapter;
+
+
 
 
     @Override
@@ -54,6 +56,8 @@ public class SearchPage extends AppCompatActivity {
         showRecyclerList();
 
     }
+
+
 
 
     public boolean onCreateOptionsMenu (Menu menu) {
@@ -87,6 +91,8 @@ public class SearchPage extends AppCompatActivity {
 
     public void showRecyclerList () {
 
+
+        progressBar.setVisibility(View.VISIBLE);
         String query = getIntent().getStringExtra(SearchPage.EXTRA_QUERY);
         AsyncHttpClient client = new AsyncHttpClient();
         client.addHeader("Authorization", "888cca33a72212b23a59c6453ebd573efa9eaf44");
@@ -96,7 +102,7 @@ public class SearchPage extends AppCompatActivity {
         client.get(URL, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                progressBar.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.INVISIBLE);
                 String result = new String(responseBody);
                 try {
 
@@ -115,27 +121,41 @@ public class SearchPage extends AppCompatActivity {
                         startActivity(intent);
                     } else {
                         rvUser.setLayoutManager(new LinearLayoutManager(SearchPage.this));
-                        ListUserAdapter listUserAdapter = new ListUserAdapter(listUser);
+                        listUserAdapter = new ListUserAdapter(listUser);
                         rvUser.setAdapter(listUserAdapter);
                         progressBar.setVisibility(View.INVISIBLE);
                     }
 
+
                 } catch (Exception e) {
-                    Intent intent = new Intent(SearchPage.this, EmptyResult.class);
-                    startActivity(intent);
+                    Toast.makeText(SearchPage.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
-                
-
-
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Intent intent = new Intent(SearchPage.this, EmptyResult.class);
-                startActivity(intent);
+                progressBar.setVisibility(View.INVISIBLE);
+                String errorMessage;
+                switch (statusCode) {
+                    case 401:
+                        errorMessage = statusCode + " : Bad Request";
+                        break;
+                    case 403:
+                        errorMessage = statusCode + " : Forbidden";
+                        break;
+                    case 404:
+                        errorMessage = statusCode + " : Not Found";
+                        break;
+                    default:
+                        errorMessage =  statusCode + " : " + error.getMessage();
+                        break;
+                }
+                Toast.makeText(SearchPage.this, errorMessage, Toast.LENGTH_SHORT).show();
+
             }
         });
    }
+
 
 }
