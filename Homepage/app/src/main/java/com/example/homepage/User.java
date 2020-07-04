@@ -6,12 +6,10 @@ import android.os.Parcelable;
 public class User implements Parcelable {
 
     private String name;
-    private String description;
     private String photo;
 
     protected User(Parcel in) {
         name = in.readString();
-        description = in.readString();
         photo = in.readString();
     }
 
@@ -40,13 +38,6 @@ public class User implements Parcelable {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public String getPhoto() {
         return photo;
@@ -64,7 +55,6 @@ public class User implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(name);
-        parcel.writeString(description);
         parcel.writeString(photo);
     }
 }

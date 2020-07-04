@@ -11,6 +11,10 @@
         android:roundIcon="@mipmap/ic_gitapp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".EmptyResult"
+            android:label="@string/result_label"/>
+        <activity android:name=".SearchPage"
+            android:label="@string/result_label"/>
         <activity
             android:name=".WelcomeScreen"
             android:theme="@style/TaskMiss">

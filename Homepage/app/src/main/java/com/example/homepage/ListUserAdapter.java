@@ -43,7 +43,7 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ListVi
                 .into(holder.imgPhoto);
 
         holder.tvName.setText(user.getName());
-        holder.tvDescription.setText(user.getDescription());
+
     }
 
     @Override
@@ -54,15 +54,14 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ListVi
     public class ListViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imgPhoto;
-        TextView tvName, tvDescription;
+        TextView tvName;
 
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imgPhoto = itemView.findViewById(R.id.img_item_photo);
-            tvName = itemView.findViewById(R.id.tv_item_name);
-            tvDescription = itemView.findViewById(R.id.tv_item_description);
+            tvName = itemView.findViewById(R.id.list_username);
         }
     }
 }

@@ -3,6 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id = "@+id/home"
+        android:title="@string/menu_home"
+        app:showAsAction="never"/>
+
+    <item
         android:id = "@+id/language"
         android:title="@string/menu_bahasa"
         app:showAsAction="never"/>
@@ -17,11 +22,12 @@
         android:title="@string/menu_keluar"
         app:showAsAction="never"/>
 
+
     <item
         android:id="@+id/action_search"
-        app:actionViewClass="android.widget.SearchView"
-        app:showAsAction="always|collapseActionView"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="@string/menu_cari" />
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/menu_cari"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="collapseActionView|always" />
 
 </menu>

@@ -56,7 +56,7 @@ public class DashboardFragment extends Fragment {
 
     public ArrayList <User>  getListUsers () {
 
-        String[] dataPhoto = getResources().getStringArray(R.array.data_photo);
+        String[] dataPhoto = getResources().getStringArray(R.array.avatar);
 
         ArrayList <User> listUser = new ArrayList<>();
 
