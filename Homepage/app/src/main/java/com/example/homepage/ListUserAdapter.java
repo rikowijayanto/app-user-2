@@ -46,7 +46,7 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ListVi
             public void onClick(View view) {
                 Toast.makeText(view.getContext(), user.getName(),Toast.LENGTH_SHORT ).show();
 
-                Intent intent = new Intent(view.getContext(), DetailUserMain.class);
+                Intent intent = new Intent(view.getContext(), UserDetail.class);
                 intent.putExtra(USER_KEY, user.getName());
                 view.getContext().startActivity(intent);
 
