@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DetailUserMain">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/detail_username"
@@ -33,10 +32,13 @@
 
     <TextView
         android:id="@+id/detail_nama"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:scrollHorizontally="false"
+        android:ellipsize="none"
         android:layout_marginTop="16dp"
+        android:singleLine="false"
         android:maxLines="3"
         android:text="@string/account_name"
         android:textSize="22sp"
@@ -183,6 +185,17 @@
         app:layout_constraintTop_toBottomOf="@+id/detail_company"
         tools:ignore="MissingConstraints" />
 
+    <ProgressBar
+        android:id="@+id/progressBarLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.341"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -42,7 +42,7 @@ public class SearchPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_page);
+        setContentView(R.layout.layout_home);
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
@@ -51,7 +51,7 @@ public class SearchPage extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBarLoading);
 
         progressBar.setVisibility(View.INVISIBLE);
-        rvUser = findViewById(R.id.rv_srp);
+        rvUser = findViewById(R.id.rv_user);
         rvUser.setHasFixedSize(true);
         showRecyclerList();
 

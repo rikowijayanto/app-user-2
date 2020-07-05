@@ -14,13 +14,13 @@ import androidx.fragment.app.FragmentPagerAdapter;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     private final Context mContext;
-    private final String USER_KEY = "username";
     private Bundle bundle;
 
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+    public SectionsPagerAdapter(Context context, FragmentManager fm, Bundle bundle) {
         super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mContext = context;
+        this.bundle = bundle;
 
 
     }
@@ -41,15 +41,18 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
             case 0:
                 fragment = new IdentitasUser();
+                fragment.setArguments(bundle);
                 break;
 
             case 1:
-                fragment = FragmentFollowing.newInstance();
+                fragment = new FragmentFollowing();
+                fragment.setArguments(bundle);
                 break;
 
 
             case 2:
-                fragment = FragmentFollower.newInstance();
+                fragment = new FragmentFollower();
+                fragment.setArguments(bundle);
                 break;
         }
         return fragment;
@@ -58,5 +61,11 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return 3;
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return mContext.getResources().getString(TAB_TITLES[position]);
     }
 }

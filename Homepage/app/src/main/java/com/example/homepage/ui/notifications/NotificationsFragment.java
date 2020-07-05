@@ -1,40 +1,45 @@
 package com.example.homepage.ui.notifications;
 
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.homepage.R;
+import com.example.homepage.SearchPage;
+import com.example.homepage.SectionsPagerAdapter;
+import com.google.android.material.tabs.TabLayout;
 
 public class NotificationsFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    ProgressBar progressBar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         setHasOptionsMenu(true);
-        notificationsViewModel =
-                ViewModelProviders.of(this).get(NotificationsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
 
+        Bundle bundle = new Bundle();
+        bundle.putString("username", "rikowijayanto");
+
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(getActivity(), getActivity().getSupportFragmentManager(), bundle);
+        ViewPager viewPager = root.findViewById(R.id.view_pager1);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = root.findViewById(R.id.tabs_1);
+        tabs.setupWithViewPager(viewPager);
 
 
         return root;
-    }
-
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_main, menu);
-        super.onCreateOptionsMenu(menu, inflater);
     }
 }

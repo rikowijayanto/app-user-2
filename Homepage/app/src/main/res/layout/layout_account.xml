@@ -59,23 +59,5 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/btn_akun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#26c281"
-        android:drawableLeft="@drawable/button_go"
-        android:text="@string/btn_akun"
-        android:textColor="#fff"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.816"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.25"
-        tools:ignore="MissingConstraints" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
