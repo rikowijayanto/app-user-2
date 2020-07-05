@@ -18,8 +18,6 @@ public class IdentitasUser extends Fragment {
 
     public static IdentitasUser newInstance() {
         IdentitasUser fragment = new IdentitasUser();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
         return fragment;
     }
 
@@ -33,6 +31,9 @@ public class IdentitasUser extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.detail_user_current, container, false);
+        if (getArguments() != null) {
+            System.out.println("==================="+getArguments().getString("username"));
+        }
         return view;
 
 

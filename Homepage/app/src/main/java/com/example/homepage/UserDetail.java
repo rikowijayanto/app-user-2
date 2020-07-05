@@ -9,25 +9,33 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class UserDetail extends AppCompatActivity {
+public class UserDetail extends AppCompatActivity{
     private final String USER_KEY = "username";
+    String nama;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_detail);
 
+        nama = getIntent().getStringExtra(USER_KEY);
+        Bundle bundle = new Bundle();
+        bundle.putString(USER_KEY, nama);
+
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
 
-        String name = getIntent().getStringExtra(USER_KEY);
+        IdentitasUser identitasUser = new IdentitasUser();
+        identitasUser.setArguments(bundle);
+
 
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
 
-        TextView nama = findViewById(R.id.detail_nama);
-        nama.setText(name);
+
+
 
     }
+
 }

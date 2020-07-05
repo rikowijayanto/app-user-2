@@ -15,6 +15,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     private final Context mContext;
     private final String USER_KEY = "username";
+    private Bundle bundle;
 
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {

@@ -56,16 +56,6 @@ public class DetailUserMain extends AppCompatActivity {
         String name = getIntent().getStringExtra(USER_KEY);
         username.setText(name);
 
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-
-        tabs.setupWithViewPager(viewPager);
-        getSupportActionBar().setElevation(0);
-
-
 
         final AsyncHttpClient client = new AsyncHttpClient();
         client.addHeader("Authorization", "888cca33a72212b23a59c6453ebd573efa9eaf44");
