@@ -37,33 +37,6 @@
     <string name="tab1">Mengikuti</string>
     <string name="tab2">Pengikut</string>
 
-
-    <string-array name="username">
-        <item>JakeWharton</item>
-        <item>amitshekhariitbhu</item>
-        <item>romainguy</item>
-        <item>chrisbanes</item>
-        <item>tipsy</item>
-        <item>ravi8x</item>
-        <item>jasoet</item>
-        <item>budioktaviyan</item>
-        <item>hendisantika</item>
-        <item>sidiqpermana</item>
-    </string-array>
-
-    <string-array name="avatar">
-        <item>https://user-images.githubusercontent.com/43143626/86412708-c2cf7880-bce9-11ea-8580-c280a73fa1cc.png</item>
-        <item>https://user-images.githubusercontent.com/43143626/86412816-f5797100-bce9-11ea-9184-792e4ce342d5.png</item>
-        <item>https://user-images.githubusercontent.com/43143626/86412819-f6aa9e00-bce9-11ea-9ed7-3755d661ec2f.png</item>
-        <item>https://user-images.githubusercontent.com/43143626/86412823-f7433480-bce9-11ea-9617-dba6665b5490.png</item>
-        <item>https://user-images.githubusercontent.com/43143626/86412825-f7dbcb00-bce9-11ea-9f69-d5beb2c2abab.png</item>
-        <item>https://user-images.githubusercontent.com/43143626/86412826-f8746180-bce9-11ea-997c-e21fe935db0f.png</item>
-        <item>https://user-images.githubusercontent.com/43143626/86412827-f8746180-bce9-11ea-8ca1-6d7f0e6192be.png</item>
-        <item>https://user-images.githubusercontent.com/43143626/86412830-f90cf800-bce9-11ea-9563-072df3a7848d.png</item>
-        <item>https://user-images.githubusercontent.com/43143626/86412831-f9a58e80-bce9-11ea-92d2-5e378c570206.png</item>
-        <item>https://user-images.githubusercontent.com/43143626/86412832-fa3e2500-bce9-11ea-866b-4257257ef4d4.png</item>
-
-    </string-array>
     <string name="title_activity_tab_detail">TabDetail</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
