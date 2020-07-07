@@ -1,10 +1,13 @@
 package com.example.homepage;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.homepage.ui.BlankResult;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -69,10 +73,16 @@ public class FragmentFollower extends Fragment {
                     }
 
 
-                    rvUser.setLayoutManager(new LinearLayoutManager(getActivity()));
-                    listUserAdapter = new ListUserAdapter(listUser);
-                    rvUser.setAdapter(listUserAdapter);
-                    progressBar.setVisibility(View.INVISIBLE);
+                    if (listUser.isEmpty()) {
+                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+
+
+                    } else {
+                        rvUser.setLayoutManager(new LinearLayoutManager(getActivity()));
+                        listUserAdapter = new ListUserAdapter(listUser);
+                        rvUser.setAdapter(listUserAdapter);
+                        progressBar.setVisibility(View.INVISIBLE);
+                    }
 
 
 
