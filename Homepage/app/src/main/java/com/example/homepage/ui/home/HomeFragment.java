@@ -31,11 +31,9 @@ import cz.msebera.android.httpclient.Header;
 public class HomeFragment extends Fragment {
     private ProgressBar progressBar;
     private ArrayList <User> list = new ArrayList<>();
-    private RecyclerView rvUser;
-
-    private ArrayList <User> listUser = new ArrayList<>();
     ListUserAdapter listUserAdapter;
-
+    private RecyclerView rvUser;
+    private ArrayList <User> listUser = new ArrayList<>();
     private String query = "riko";
 
 
