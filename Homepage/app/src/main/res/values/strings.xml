@@ -3,10 +3,8 @@
     <string name="title_home">Beranda</string>
     <string name="title_dashboard">Feed</string>
     <string name="title_notifications">Akun</string>
-    <string name="account_your">Akun Anda</string>
     <string name="account_name">Riko Wijayanto</string>
     <string name="account_username">rikozmoo</string>
-    <string name="account_profile">Profil</string>
 
     <string name="rekomendasi_untukmu">Rekomendasi Untukmu</string>
     <string name="menu_bahasa">Bahasa</string>
@@ -22,14 +20,10 @@
     <string name="detail_text_blog">Blog</string>
     <string name="detail_text_company">Perusahaan</string>
     <string name="detail_text_lokasi">Lokasi</string>
-    <string name="manifest_detil">Detil Pengguna</string>
 
     <string name="tab1">Mengikuti</string>
     <string name="tab2">Pengikut</string>
 
-    <string name="title_activity_tab_detail">TabDetail</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="title_activity_user_detail">UserDetail</string>
