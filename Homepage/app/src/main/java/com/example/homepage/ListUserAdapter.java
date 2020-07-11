@@ -54,7 +54,6 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ListVi
         });
 
 
-
     }
 
     @Override

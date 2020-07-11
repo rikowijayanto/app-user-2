@@ -71,18 +71,11 @@ public class FragmentFollower extends Fragment {
                         user.setName(jsonObject.getString("login"));
                         listUser.add(user);
                     }
-
-
-                    if (listUser.isEmpty()) {
-                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
-
-
-                    } else {
                         rvUser.setLayoutManager(new LinearLayoutManager(getActivity()));
                         listUserAdapter = new ListUserAdapter(listUser);
                         rvUser.setAdapter(listUserAdapter);
                         progressBar.setVisibility(View.INVISIBLE);
-                    }
+
 
 
 
