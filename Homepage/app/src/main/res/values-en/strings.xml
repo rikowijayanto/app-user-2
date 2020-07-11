@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">GitApp</string>
+    <string name="title_home">Homepage</string>
+    <string name="title_dashboard">Feed</string>
+    <string name="title_notifications">Account</string>
+    <string name="account_your">Your Account</string>
+    <string name="account_name">Riko Wijayanto</string>
+    <string name="account_username">rikozmoo</string>
+    <string name="account_profile">Profile</string>
+
+    <string name="rekomendasi_untukmu">Recommendation For You</string>
+    <string name="menu_bahasa">Language</string>
+    <string name="menu_cari">Search</string>
+    <string name="menu_keluar">Quit</string>
+
+
+    <string name="search_hint">Enter the name</string>
+    <string name="no_result">No result</string>
+    <string name="result_label">Search Result</string>
+    <string name="detail_text_pengikut">Followers</string>
+    <string name="detail_text_mengikuti">Following</string>
+    <string name="detail_text_blog">Blog</string>
+    <string name="detail_text_company">Company</string>
+    <string name="detail_text_lokasi">Location</string>
+    <string name="manifest_detil">User Detail</string>
+
+    <string name="tab1">Following</string>
+    <string name="tab2">Follower</string>
+
+    <string name="title_activity_tab_detail">TabDetail</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="title_activity_user_detail">UserDetail</string>
+    <string name="tab3">User Identity</string>
+    <string name="detail_pengguna">User Detail</string>
+    <string name="nilai_follow">No result</string>
+
+
+</resources>
