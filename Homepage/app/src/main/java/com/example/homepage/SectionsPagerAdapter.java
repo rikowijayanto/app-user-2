@@ -43,13 +43,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 fragment = new IdentitasUser();
                 fragment.setArguments(bundle);
                 break;
-
             case 1:
                 fragment = new FragmentFollowing();
                 fragment.setArguments(bundle);
                 break;
-
-
             case 2:
                 fragment = new FragmentFollower();
                 fragment.setArguments(bundle);

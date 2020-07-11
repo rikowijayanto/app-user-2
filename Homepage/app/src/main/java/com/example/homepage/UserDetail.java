@@ -7,6 +7,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
+
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.appcompat.widget.SearchView;
@@ -31,26 +33,18 @@ public class UserDetail extends AppCompatActivity{
         nama = getIntent().getStringExtra(USER_KEY);
         Bundle bundle = new Bundle();
         bundle.putString(USER_KEY, nama);
-
-
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager(), bundle);
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
 
-
-
-
     }
 
     public boolean onCreateOptionsMenu (Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu_main, menu);
-
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-
-
         SearchView searchView = (SearchView) (menu.findItem(R.id.action_search)).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setQueryHint(getResources().getString(R.string.search_hint));
@@ -68,6 +62,15 @@ public class UserDetail extends AppCompatActivity{
                 return false;
             }
         });
+
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.keluar) {
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        }
 
         return true;
     }

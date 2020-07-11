@@ -10,7 +10,7 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
     tools:context=".ui.home.HomeFragment"
-    >\
+    >
 
 
     <include

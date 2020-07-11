@@ -1,19 +1,10 @@
 package com.example.homepage;
-
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-
 import android.text.TextUtils;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -50,7 +41,6 @@ public class IdentitasUser extends Fragment {
         setHasOptionsMenu(true);
 
         progressBar = view.findViewById(R.id.progressBarLoading);
-
         username = view.findViewById(R.id.detail_username);
         nama_lengkap = view.findViewById(R.id.detail_nama);
         detail_blog = view.findViewById(R.id.detail_blog);
@@ -59,10 +49,8 @@ public class IdentitasUser extends Fragment {
         photo1 = view.findViewById(R.id.detail_image);
         detail_following = view.findViewById(R.id.detail_following);
         detail_follower = view.findViewById(R.id.detail_follower);
-
         String name = this.getArguments().getString(USER_KEY);
         username.setText(name);
-
         progressBar.setVisibility(View.VISIBLE);
 
         final AsyncHttpClient client = new AsyncHttpClient();
@@ -120,8 +108,6 @@ public class IdentitasUser extends Fragment {
                             String following = responseObject.getString("following");
                             detail_following.setText(": "+following);
 
-
-
                         } catch (Exception e) {
                             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
@@ -152,34 +138,6 @@ public class IdentitasUser extends Fragment {
         );
 
         return view;
-
-
-    }
-
-    public void onCreateOptionsMenu (Menu menu, MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_main, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-
-        SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
-
-
-        SearchView searchView = (SearchView) (menu.findItem(R.id.action_search)).getActionView();
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
-        searchView.setQueryHint(getResources().getString(R.string.search_hint));
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                progressBar.setVisibility(View.VISIBLE);
-                Intent intent = new Intent(getActivity(), SearchPage.class);
-                intent.putExtra(SearchPage.EXTRA_QUERY, query);
-                startActivity(intent);
-                return true;
-            }
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
     }
 
     @Override

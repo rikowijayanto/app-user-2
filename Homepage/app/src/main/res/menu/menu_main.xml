@@ -3,18 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id = "@+id/home"
-        android:title="@string/menu_home"
-        app:showAsAction="never"/>
-
-    <item
         android:id = "@+id/language"
         android:title="@string/menu_bahasa"
-        app:showAsAction="never"/>
-
-    <item
-        android:id = "@+id/tentang"
-        android:title="@string/menu_tentang"
         app:showAsAction="never"/>
 
     <item

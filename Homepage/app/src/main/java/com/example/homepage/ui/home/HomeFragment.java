@@ -1,5 +1,4 @@
 package com.example.homepage.ui.home;
-
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +11,6 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.homepage.EmptyResult;
 import com.example.homepage.ListUserAdapter;
 import com.example.homepage.R;
@@ -20,19 +18,14 @@ import com.example.homepage.SearchPage;
 import com.example.homepage.User;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import java.util.ArrayList;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import cz.msebera.android.httpclient.Header;
-
-
 public class HomeFragment extends Fragment {
     private ProgressBar progressBar;
     private ArrayList <User> list = new ArrayList<>();
@@ -46,11 +39,8 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
         setHasOptionsMenu(true);
-
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-
         progressBar = root.findViewById(R.id.progressBarLoading);
         rvUser = root.findViewById(R.id.rv_user);
         rvUser.setHasFixedSize(true);
@@ -63,10 +53,7 @@ public class HomeFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater ) {
         inflater.inflate(R.menu.menu_main, menu);
         super.onCreateOptionsMenu(menu, inflater);
-
         SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
-
-
             SearchView searchView = (SearchView) (menu.findItem(R.id.action_search)).getActionView();
             searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
             searchView.setQueryHint(getResources().getString(R.string.search_hint));

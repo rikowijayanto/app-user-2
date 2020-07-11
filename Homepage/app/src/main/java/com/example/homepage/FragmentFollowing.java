@@ -1,6 +1,4 @@
 package com.example.homepage;
-
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,14 +6,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -25,16 +20,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
-
-
 public class FragmentFollowing extends Fragment {
 
     private ArrayList<User> listUser = new ArrayList<>();
     private RecyclerView rvUser;
     ListUserAdapter listUserAdapter;
     ProgressBar progressBar;
-
-
     public FragmentFollowing() {
 
     }
@@ -79,13 +70,15 @@ public class FragmentFollowing extends Fragment {
                         listUser.add(user);
                     }
 
-
-                    rvUser.setLayoutManager(new LinearLayoutManager(getActivity()));
-                    listUserAdapter = new ListUserAdapter(listUser);
-                    rvUser.setAdapter(listUserAdapter);
-                    progressBar.setVisibility(View.INVISIBLE);
-
-
+                    if (listUser.isEmpty()) {
+                        Toast.makeText(getActivity(), R.string.nilai_follow, Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        rvUser.setLayoutManager(new LinearLayoutManager(getActivity()));
+                        listUserAdapter = new ListUserAdapter(listUser);
+                        rvUser.setAdapter(listUserAdapter);
+                        progressBar.setVisibility(View.INVISIBLE);
+                    }
 
                 } catch (Exception e) {
                     Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();

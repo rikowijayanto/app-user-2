@@ -8,13 +8,6 @@
     <string name="account_username">rikozmoo</string>
     <string name="account_profile">Profile</string>
 
-    <string name="heroes_name">Nama Pahlawan</string>
-    <string name="description">Deskripsi</string>
-    <string name="list">List</string>
-    <string name="grid">Grid</string>
-    <string name="with_cardview">with CardView</string>
-    <string name="favorite">Favorite</string>
-    <string name="share">Share</string>
     <string name="rekomendasi_untukmu">Rekomendasi Untukmu</string>
     <string name="btn_akun">Akun</string>
     <string name="menu_bahasa">Bahasa</string>
@@ -45,6 +38,7 @@
     <string name="title_activity_user_detail">UserDetail</string>
     <string name="tab3">Identitas User</string>
     <string name="detail_pengguna">Detail Pengguna</string>
+    <string name="nilai_follow">Tidak ada hasil</string>
 
 
 </resources>

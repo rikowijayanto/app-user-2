@@ -1,5 +1,4 @@
 package com.example.homepage.ui.dashboard;
-
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -7,28 +6,24 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.homepage.EmptyResult;
 import com.example.homepage.GridUserAdapter;
-import com.example.homepage.ListUserAdapter;
 import com.example.homepage.R;
 import com.example.homepage.SearchPage;
 import com.example.homepage.User;
+import com.example.homepage.ui.home.HomeFragment;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
@@ -36,8 +31,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
-
 import cz.msebera.android.httpclient.Header;
 
 public class DashboardFragment extends Fragment {
@@ -47,10 +40,6 @@ public class DashboardFragment extends Fragment {
     private ArrayList <User> listUser = new ArrayList<>();
     private String query = "riko";
     ProgressBar progressBar;
-    //GridUserAdapter gridUserAdapter;
-
-
-    private DashboardViewModel dashboardViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -150,9 +139,17 @@ public class DashboardFragment extends Fragment {
                         break;
                 }
                 Toast.makeText(getActivity(), errorMessage, Toast.LENGTH_SHORT).show();
-
             }
         });
 
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.keluar) {
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        }
+
+        return true;
     }
 }
