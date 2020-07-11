@@ -60,7 +60,7 @@ public class ListUserAdapter extends RecyclerView.Adapter<ListUserAdapter.ListVi
         return listUser.size();
     }
 
-    public class ListViewHolder extends RecyclerView.ViewHolder {
+    public static class ListViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imgPhoto;
         TextView tvName;

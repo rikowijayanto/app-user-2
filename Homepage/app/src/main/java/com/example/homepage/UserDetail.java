@@ -18,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class UserDetail extends AppCompatActivity{
-    private final String USER_KEY = "username";
     String nama;
 
     @Override
@@ -30,6 +29,7 @@ public class UserDetail extends AppCompatActivity{
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
+        String USER_KEY = "username";
         nama = getIntent().getStringExtra(USER_KEY);
         Bundle bundle = new Bundle();
         bundle.putString(USER_KEY, nama);
@@ -49,9 +49,9 @@ public class UserDetail extends AppCompatActivity{
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         searchView.setQueryHint(getResources().getString(R.string.search_hint));
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
             @Override
             public boolean onQueryTextSubmit(String query) {
-                //progressBar.setVisibility(View.VISIBLE);
                 Intent intent = new Intent( UserDetail.this, SearchPage.class);
                 intent.putExtra(SearchPage.EXTRA_QUERY, query);
                 startActivity(intent);

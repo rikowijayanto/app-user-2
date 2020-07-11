@@ -34,7 +34,6 @@ public class HomeFragment extends Fragment {
     ListUserAdapter listUserAdapter;
     private RecyclerView rvUser;
     private ArrayList <User> listUser = new ArrayList<>();
-    private String query = "riko";
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -47,7 +46,6 @@ public class HomeFragment extends Fragment {
         showRecyclerList();
         return root;
     }
-
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater ) {
@@ -79,7 +77,8 @@ public class HomeFragment extends Fragment {
         AsyncHttpClient client = new AsyncHttpClient();
         client.addHeader("Authorization", "888cca33a72212b23a59c6453ebd573efa9eaf44");
         client.addHeader("User-Agent", "request");
-        String URL = "https://api.github.com/search/users?q="+query.toLowerCase();
+        String query = "riko";
+        String URL = "https://api.github.com/search/users?q="+ query.toLowerCase();
 
         client.get(URL, new AsyncHttpResponseHandler() {
             @Override

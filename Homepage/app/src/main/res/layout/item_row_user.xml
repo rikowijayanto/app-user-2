@@ -9,7 +9,6 @@
     android:paddingTop="10dp"
     android:paddingBottom="10dp">
 
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_item_photo"
         android:layout_width="70dp"
@@ -34,6 +33,5 @@
         app:layout_constraintStart_toEndOf="@+id/img_item_photo"
         app:layout_constraintTop_toTopOf="@+id/img_item_photo"
         tools:ignore="MissingConstraints" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout >

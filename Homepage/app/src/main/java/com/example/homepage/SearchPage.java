@@ -5,12 +5,12 @@ import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -57,8 +57,6 @@ public class SearchPage extends AppCompatActivity {
         showRecyclerList();
 
     }
-
-
 
 
     public boolean onCreateOptionsMenu (Menu menu) {
@@ -162,6 +160,9 @@ public class SearchPage extends AppCompatActivity {
         if (item.getItemId() == R.id.keluar) {
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(1);
+        } else if (item.getItemId() == R.id.language) {
+            Intent mIntent = new Intent (Settings.ACTION_LOCALE_SETTINGS);
+            startActivity(mIntent);
         }
 
         return true;

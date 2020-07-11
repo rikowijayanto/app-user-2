@@ -3,6 +3,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,8 +15,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.homepage.EmptyResult;
@@ -23,27 +22,20 @@ import com.example.homepage.GridUserAdapter;
 import com.example.homepage.R;
 import com.example.homepage.SearchPage;
 import com.example.homepage.User;
-import com.example.homepage.ui.home.HomeFragment;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import cz.msebera.android.httpclient.Header;
 
 public class DashboardFragment extends Fragment {
-
-    private ArrayList <User> list = new ArrayList<>();
     private RecyclerView rvUser;
     private ArrayList <User> listUser = new ArrayList<>();
-    private String query = "riko";
     ProgressBar progressBar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
         setHasOptionsMenu(true);
         View root = inflater.inflate(R.layout.fragment_feeds, container, false);
         progressBar = root.findViewById(R.id.progressBarLoading);
@@ -56,10 +48,7 @@ public class DashboardFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_main, menu);
         super.onCreateOptionsMenu(menu, inflater);
-
         SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
-
-
         SearchView searchView = (SearchView) (menu.findItem(R.id.action_search)).getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
         searchView.setQueryHint(getResources().getString(R.string.search_hint));
@@ -85,7 +74,8 @@ public class DashboardFragment extends Fragment {
         AsyncHttpClient client = new AsyncHttpClient();
         client.addHeader("Authorization", "888cca33a72212b23a59c6453ebd573efa9eaf44");
         client.addHeader("User-Agent", "request");
-        String URL = "https://api.github.com/search/users?q="+query.toLowerCase();
+        String query = "riko";
+        String URL = "https://api.github.com/search/users?q="+ query.toLowerCase();
 
         client.get(URL, new AsyncHttpResponseHandler() {
             @Override
@@ -148,8 +138,10 @@ public class DashboardFragment extends Fragment {
         if (item.getItemId() == R.id.keluar) {
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(1);
+        } else if (item.getItemId() == R.id.language) {
+            Intent mIntent = new Intent (Settings.ACTION_LOCALE_SETTINGS);
+            startActivity(mIntent);
         }
-
         return true;
     }
 }

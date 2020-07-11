@@ -52,6 +52,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 fragment.setArguments(bundle);
                 break;
         }
+        assert fragment != null;
         return fragment;
     }
 

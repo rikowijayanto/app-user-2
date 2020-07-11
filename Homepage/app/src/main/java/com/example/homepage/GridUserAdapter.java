@@ -41,7 +41,7 @@ public class GridUserAdapter extends RecyclerView.Adapter <GridUserAdapter.GridV
         return listUser.size();
     }
 
-    public class GridViewHolder extends RecyclerView.ViewHolder {
+    public static class GridViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto;
 
         GridViewHolder(View itemView) {

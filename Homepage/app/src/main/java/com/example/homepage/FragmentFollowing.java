@@ -30,7 +30,6 @@ public class FragmentFollowing extends Fragment {
 
     }
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,10 +108,7 @@ public class FragmentFollowing extends Fragment {
             }
         });
 
-
         return view;
-
-
     }
 
     @Override

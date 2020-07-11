@@ -22,7 +22,6 @@ import cz.msebera.android.httpclient.Header;
 
 public class IdentitasUser extends Fragment {
 
-    private final String USER_KEY = "username";
     TextView username, nama_lengkap, detail_blog, detail_company, detail_location, detail_following, detail_follower;
     ImageView photo1;
 
@@ -49,6 +48,7 @@ public class IdentitasUser extends Fragment {
         photo1 = view.findViewById(R.id.detail_image);
         detail_following = view.findViewById(R.id.detail_following);
         detail_follower = view.findViewById(R.id.detail_follower);
+        String USER_KEY = "username";
         String name = this.getArguments().getString(USER_KEY);
         username.setText(name);
         progressBar.setVisibility(View.VISIBLE);
