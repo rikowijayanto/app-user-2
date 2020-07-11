@@ -1,5 +1,4 @@
 package com.example.homepage;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
@@ -58,7 +57,7 @@ public class EmptyResult extends AppCompatActivity {
 
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.keluar) {
-            android.os.Process.killProcess(android.os.Process.myPid());
+            this.finish();
             System.exit(1);
         } else if (item.getItemId() == R.id.language) {
             Intent mIntent = new Intent (Settings.ACTION_LOCALE_SETTINGS);
