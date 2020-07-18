@@ -30,6 +30,8 @@
     <string name="tab3">Identitas User</string>
     <string name="detail_pengguna">Detail Pengguna</string>
     <string name="nilai_follow">Tidak ada hasil</string>
+    <string name="splash_name">GitApp</string>
+    <string name="splash_copyright">Copyright by Riko. 2020</string>
 
 
 </resources>
