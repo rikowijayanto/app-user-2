@@ -14,7 +14,7 @@
         <activity
             android:name=".UserDetail"
             android:label="@string/title_activity_user_detail"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".EmptyResult"
             android:label="@string/result_label" />

@@ -31,7 +31,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class DashboardFragment extends Fragment {
     private RecyclerView rvUser;
-    private ArrayList <User> listUser = new ArrayList<>();
+    private final ArrayList <User> listUser = new ArrayList<>();
     ProgressBar progressBar;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
