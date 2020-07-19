@@ -31,6 +31,7 @@
     <string name="tab3">User Identity</string>
     <string name="detail_pengguna">User Detail</string>
     <string name="nilai_follow">No result</string>
+    <string name="title_favorite">Favourite</string>
 
 
 </resources>
